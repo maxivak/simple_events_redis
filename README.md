@@ -8,7 +8,7 @@ Useful for debugging and tracking different events in application.
 
 ## Overview
 Data is stored in Redis in lists with names:
-<<YOUR_SITE_NAME>> : lists : <list_name> : <day> - Redis list
+_SITE_NAME_ : lists : _list_name_ : _day_ - Redis list
 
 for example,
 
@@ -30,12 +30,19 @@ Setup:
 
 initializer:
 
-    ListsByDaysRedis::List::SITE_NAME = 'mysite'
-    ListsByDaysRedis::List::EXPIRE_DAYS = 7
+require 'events'
+
+$Mylog = SimpleEventsRedis::Events
+
+$Mylog.this_site_name='sitename'
+$Mylog.set_config({:EXPIRE_DAYS => 7})
 
 
 
 ## Add new item to list
+
+$Mylog.add('debug', {:msg=>'hello. something happened'})
+
 
 
 

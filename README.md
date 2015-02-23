@@ -30,19 +30,22 @@ Setup:
 
 initializer:
 
+```ruby
+
 require 'events'
 
 $Mylog = SimpleEventsRedis::Events
 
 $Mylog.this_site_name='sitename'
 $Mylog.set_config({:EXPIRE_DAYS => 7})
-
+```
 
 
 ## Add new item to list
 
+```ruby
 $Mylog.add('debug', {:msg=>'hello. something happened'})
-
+```
 
 
 

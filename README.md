@@ -19,10 +19,10 @@ for example,
 
 It uses gem 'redis' and relies on $redis global variable to access Redis server.
 
-in Rails application:
+Gemfile:
 
     gem 'redis'
-    gem 'lists_by_days_redis'
+    gem 'simple_events_redis'
 
 
 
@@ -31,6 +31,8 @@ Setup:
 initializer:
 
 ```ruby
+
+# config/initializers/simple_events_redis.rb
 
 require 'events'
 
